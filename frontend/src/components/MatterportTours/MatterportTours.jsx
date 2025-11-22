@@ -4,18 +4,22 @@ import "./MatterportTours.css";
 export default function MatterportTours() {
   return (
     <section className="matterport-section">
-      <div className="matterport-container">
-        <h2 className="matterport-title">Featured 3D Showcase</h2>
+      <div className="matterport-outer-box">
+
+        <h2 className="matterport-title">Virtual Tour Demo</h2>
         <p className="matterport-subtitle">
-          Explore an immersive virtual experience powered by Matterport.
+          Experience an interactive 3D walkthrough powered by Matterport.
         </p>
 
-        {/* Placeholder Frame */}
         <div className="matterport-frame">
-          <p>Your Matterport Tour Will Appear Here</p>
+          <iframe
+            src="https://my.matterport.com/show/?m=ru6A87ZCB1L"
+            frameBorder="0"
+            allow="autoplay; fullscreen; web-share; xr-spatial-tracking"
+            allowFullScreen
+          ></iframe>
         </div>
 
-        <button className="matterport-btn">View Full Tour</button>
       </div>
     </section>
   );
