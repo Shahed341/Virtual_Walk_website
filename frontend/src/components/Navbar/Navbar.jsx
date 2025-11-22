@@ -6,10 +6,8 @@ export default function Navbar() {
 
   return (
     <nav className="navbar">
-      {/* LOGO */}
       <div className="nav-logo">VirtualWalk3D</div>
 
-      {/* DESKTOP LINKS */}
       <ul className="nav-links">
         <li><a href="#">Home</a></li>
         <li><a href="#">Tours</a></li>
@@ -17,7 +15,6 @@ export default function Navbar() {
         <li><a href="#">Contact</a></li>
       </ul>
 
-      {/* HAMBURGER ICON */}
       <div
         className="nav-menu-icon"
         onClick={() => setMobileOpen(!mobileOpen)}
@@ -25,7 +22,6 @@ export default function Navbar() {
         ☰
       </div>
 
-      {/* MOBILE MENU */}
       <div className={`mobile-menu ${mobileOpen ? "open" : ""}`}>
         <a onClick={() => setMobileOpen(false)} href="#">Home</a>
         <a onClick={() => setMobileOpen(false)} href="#">Tours</a>

@@ -1,16 +1,36 @@
+/* GLOBAL FIX — removes ALL white gaps */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background: #000; /* removes white bg flash */
+}
+
 /* NAVBAR MAIN */
 .navbar {
   width: 100%;
-  padding: 14px 4%;          /* reduced padding */
+  height: auto;
+
+  padding: 14px 3%;
   background: #0a0a0a;
   color: #fff;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-sizing: border-box;
+
   position: sticky;
   top: 0;
   z-index: 1000;
+
+  border: none;
+  margin: 0;
 }
 
 /* LOGO */
@@ -18,35 +38,36 @@
   font-size: 22px;
   font-weight: bold;
   letter-spacing: 1px;
-  white-space: nowrap;        /* prevent wrapping */
+  white-space: nowrap;
 }
 
 /* DESKTOP LINKS */
 .nav-links {
   list-style: none;
+
   display: flex;
-  gap: 22px;                  /* reduced spacing */
-  padding: 0;
+  align-items: center;
+  gap: 24px;
+
   margin: 0;
-  flex-shrink: 1;             /* allow shrinking instead of overflowing */
+  padding: 0;
 }
 
 .nav-links li a {
   color: #ccc;
   text-decoration: none;
   font-size: 16px;
-  transition: color 0.2s ease-in-out;
-  white-space: nowrap;        /* prevent long lines from overflowing */
+  transition: 0.2s;
 }
 
 .nav-links li a:hover {
   color: #4db2ff;
 }
 
-/* HAMBURGER ICON */
+/* HAMBURGER */
 .nav-menu-icon {
   display: none;
-  font-size: 26px;
+  font-size: 28px;
   cursor: pointer;
   color: #fff;
 }
@@ -57,13 +78,16 @@
   top: 0;
   right: -100%;
   height: 100vh;
-  width: 230px;
+  width: 250px;
+
   background: #111;
   padding: 80px 20px;
+
   display: flex;
   flex-direction: column;
   gap: 22px;
-  transition: right 0.3s ease;
+
+  transition: 0.3s ease;
 }
 
 .mobile-menu.open {
@@ -82,13 +106,17 @@
   color: #4db2ff;
 }
 
-/* MOBILE RESPONSIVE */
+/* MOBILE */
 @media (max-width: 768px) {
   .nav-links {
-    display: none;  /* hide desktop links */
+    display: none;
   }
 
   .nav-menu-icon {
-    display: block; /* show hamburger */
+    display: block;
+  }
+
+  .navbar {
+    padding: 14px 5%;
   }
 }

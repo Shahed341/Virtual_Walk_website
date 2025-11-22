@@ -1,32 +1,42 @@
-/* HERO SECTION */
+/* HERO SECTION — FULL WIDTH + FULL HEIGHT */
 .hero {
   position: relative;
-  width: 100%;
-  height: 92vh;
+  margin: 0 !important;
+  padding: 0 !important;
+
+  width: 100vw;        /* full viewport width */
+  height: 100vh;       /* full viewport height */
+
   background: url("../../assets/Hero_Section_BG.webp") center/cover no-repeat;
+  background-size: cover;
+  background-position: center;
+
   display: flex;
   justify-content: center;
   align-items: center;
+
   overflow: hidden;
 }
-
 
 /* DARK OVERLAY */
 .hero-overlay {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100%;
+
   width: 100%;
+  height: 100%;
+
   background: rgba(10, 10, 10, 0.75);
 }
 
-/* CONTENT CONTAINER */
+/* CONTENT */
 .hero-content {
   position: relative;
   color: #fff;
   text-align: center;
   max-width: 700px;
+
   padding: 0 20px;
   animation: fadeInUp 1.2s ease forwards;
   opacity: 0;
@@ -36,7 +46,7 @@
 .hero-title {
   font-size: 48px;
   font-weight: 700;
-  margin-bottom: 15px;
+  margin: 0 0 15px 0;
 }
 
 /* SUBTITLE */
@@ -47,15 +57,17 @@
   line-height: 1.5;
 }
 
-/* BUTTON */
+/* CTA BUTTON */
 .hero-btn {
   padding: 14px 36px;
   font-size: 18px;
   background: #1e90ff;
+
   border: none;
   border-radius: 6px;
   color: white;
   cursor: pointer;
+
   transition: background 0.3s ease;
 }
 
@@ -63,19 +75,17 @@
   background: #4db2ff;
 }
 
-/* MOBILE RESPONSIVE */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .hero-title {
     font-size: 32px;
   }
-
   .hero-subtitle {
     font-size: 16px;
   }
-
   .hero-btn {
-    font-size: 16px;
     padding: 12px 28px;
+    font-size: 16px;
   }
 }
 
