@@ -1,0 +1,83 @@
+/* MAIN SECTION */
+.services-section {
+  width: 100%;
+  background: #000;
+  padding: 80px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* OUTER BOX */
+.services-outer-box {
+  width: 90vw;
+  max-width: 1600px;
+  background: #0d0d0d;
+  border-radius: 14px;
+  padding: 50px;
+  color: white;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+}
+
+/* TITLES */
+.services-title {
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.services-subtitle {
+  color: #bbb;
+  font-size: 16px;
+  margin-bottom: 35px;
+}
+
+/* GRID */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+}
+
+/* CARD */
+.service-card {
+  background: #151515;
+  border: 1px solid #222;
+  border-radius: 12px;
+  padding: 25px 20px;
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+.service-card:hover {
+  background: #1d1d1d;
+  transform: translateY(-5px);
+}
+
+/* CARD TITLE */
+.service-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #fff;
+}
+
+/* MINIMAL DESCRIPTION */
+.service-desc {
+  font-size: 14px;
+  color: #aaa;
+  margin-bottom: 15px;
+}
+
+/* PRICE */
+.service-price {
+  font-size: 18px;
+  color: #00baff;
+  font-weight: bold;
+}
+
+/* MOBILE */
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
