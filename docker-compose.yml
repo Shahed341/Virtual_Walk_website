@@ -1,13 +1,11 @@
-version: "3.9"
-
 services:
   frontend:
     build: ./frontend
     container_name: company_frontend
     ports:
-      - "3000:3000"
+      - "5173:5173"        # Expose Vite dev server
     environment:
-      - VITE_API_URL=http://localhost:5000
+      - VITE_API_URL=http://backend:5000   # Use backend service name, NOT localhost
     depends_on:
       - backend
     networks:
@@ -17,9 +15,9 @@ services:
     build: ./backend
     container_name: company_backend
     ports:
-      - "5000:5000"
+      - "5000:5000"        # Express API
     environment:
-      - DB_HOST=db
+      - DB_HOST=db         # Connect to MySQL using its service name
       - DB_USER=root
       - DB_PASSWORD=example
       - DB_NAME=companydb
@@ -32,13 +30,13 @@ services:
     image: mysql:8.0
     container_name: company_db
     restart: always
+    ports:
+      - "3306:3306"        # MySQL
     environment:
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: companydb
     volumes:
-      - ./db/init:/docker-entrypoint-initdb.d
-    ports:
-      - "3306:3306"
+      - ./db/init:/docker-entrypoint-initdb.d   # Auto-run schema.sql + seed.sql on first start
     networks:
       - company_net
 
