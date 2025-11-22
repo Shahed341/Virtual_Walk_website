@@ -1,0 +1,47 @@
+version: "3.9"
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: company_frontend
+    ports:
+      - "3000:3000"
+    environment:
+      - VITE_API_URL=http://localhost:5000
+    depends_on:
+      - backend
+    networks:
+      - company_net
+
+  backend:
+    build: ./backend
+    container_name: company_backend
+    ports:
+      - "5000:5000"
+    environment:
+      - DB_HOST=db
+      - DB_USER=root
+      - DB_PASSWORD=example
+      - DB_NAME=companydb
+    depends_on:
+      - db
+    networks:
+      - company_net
+
+  db:
+    image: mysql:8.0
+    container_name: company_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: companydb
+    volumes:
+      - ./db/init:/docker-entrypoint-initdb.d
+    ports:
+      - "3306:3306"
+    networks:
+      - company_net
+
+networks:
+  company_net:
+    driver: bridge
