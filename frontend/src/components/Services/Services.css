@@ -1,7 +1,7 @@
 /* MAIN SECTION */
 .services-section {
   width: 100%;
-  background: #000;
+  background: #f2f2f2;    /* premium light gray */
   padding: 80px 0;
   display: flex;
   justify-content: center;
@@ -10,69 +10,77 @@
 /* OUTER BOX */
 .services-outer-box {
   width: 90vw;
-  max-width: 1600px;
-  background: #0d0d0d;
-  border-radius: 14px;
-  padding: 50px;
-  color: white;
+  max-width: 1500px;
+  background: #ffffff;     /* clean white */
+  border-radius: 18px;
+  padding: 55px;
   text-align: center;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.6);
+
+  border: 1px solid #e5e5e5;   
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);  /* high-end soft shadow */
 }
 
 /* TITLES */
 .services-title {
-  font-size: 36px;
+  font-size: 38px;
   font-weight: 800;
-  margin-bottom: 8px;
+  color: #111;
+  margin-bottom: 10px;
 }
 
 .services-subtitle {
-  color: #bbb;
-  font-size: 16px;
-  margin-bottom: 35px;
+  font-size: 17px;
+  color: #666;
+  margin-bottom: 40px;
 }
 
 /* GRID */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+  gap: 28px;
 }
 
-/* CARD */
+/* SERVICE CARD */
 .service-card {
-  background: #151515;
-  border: 1px solid #222;
-  border-radius: 12px;
-  padding: 25px 20px;
-  transition: transform 0.25s ease, background 0.25s ease;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 30px 22px;
+  text-align: center;
+
+  border: 1px solid #e4e4e4;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-card:hover {
-  background: #1d1d1d;
-  transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 8px 28px rgba(0,0,0,0.1);
 }
 
-/* CARD TITLE */
+/* SERVICE NAME */
 .service-name {
-  font-size: 18px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 10px;
 }
 
-/* MINIMAL DESCRIPTION */
+/* DESCRIPTION */
 .service-desc {
-  font-size: 14px;
-  color: #aaa;
-  margin-bottom: 15px;
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 14px;
+  line-height: 1.5;
 }
 
 /* PRICE */
 .service-price {
-  font-size: 18px;
-  color: #00baff;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 700;
+  color: #3b82f6;     /* premium blue accent */
+  margin-top: 5px;
 }
 
 /* MOBILE */
