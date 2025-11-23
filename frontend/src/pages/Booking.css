@@ -1,0 +1,88 @@
+/* ================================
+   Booking Page Styles
+   ================================ */
+
+/* Page container */
+.booking-container {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 14px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Heading */
+.booking-container h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #111;
+}
+
+/* Success message */
+.booking-container .success-message {
+  padding: 12px;
+  background: #d1fae5;
+  color: #065f46;
+  border: 1px solid #a7f3d0;
+  border-radius: 8px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+/* Form elements */
+.booking-container input,
+.booking-container select {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover + focus effects */
+.booking-container input:hover,
+.booking-container input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  outline: none;
+}
+
+/* Submit button */
+.booking-container button {
+  width: 100%;
+  background: #2563eb;
+  color: #fff;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+/* Button hover effect */
+.booking-container button:hover {
+  background: #1e4eca;
+}
+
+/* Disabled loading state */
+.booking-container button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+/* Nice fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

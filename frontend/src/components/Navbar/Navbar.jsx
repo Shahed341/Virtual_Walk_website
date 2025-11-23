@@ -1,18 +1,24 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const closeMenu = () => setMobileOpen(false);
+
   return (
     <nav className="navbar">
-      <div className="nav-logo">VirtualWalk3D</div>
+      <div className="nav-logo">
+        <Link to="/">VirtualWalk3D</Link>
+      </div>
 
       <ul className="nav-links">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Tours</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><a href="#tours">Tours</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><Link className="book-btn" to="/booking">Book now</Link></li>
       </ul>
 
       <div
@@ -23,10 +29,11 @@ export default function Navbar() {
       </div>
 
       <div className={`mobile-menu ${mobileOpen ? "open" : ""}`}>
-        <a onClick={() => setMobileOpen(false)} href="#">Home</a>
-        <a onClick={() => setMobileOpen(false)} href="#">Tours</a>
-        <a onClick={() => setMobileOpen(false)} href="#">Services</a>
-        <a onClick={() => setMobileOpen(false)} href="#">Contact</a>
+        <Link to="/" onClick={closeMenu}>Home</Link>
+        <a href="#tours" onClick={closeMenu}>Tours</a>
+        <a href="#services" onClick={closeMenu}>Services</a>
+        <a href="#contact" onClick={closeMenu}>Contact</a>
+        <Link to="/booking" onClick={closeMenu}>Book now</Link>
       </div>
     </nav>
   );

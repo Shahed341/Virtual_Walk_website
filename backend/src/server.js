@@ -2,6 +2,7 @@ import express from "express";
 import dotenv from "dotenv";
 import cors from "cors";
 import { createPool } from "mysql2/promise";
+import bookingRoutes from "./routes/booking.js";
 
 dotenv.config();
 const app = express();
@@ -16,7 +17,16 @@ const pool = createPool({
   database: process.env.DB_NAME || "companydb"
 });
 
-// Simple healthcheck route
+// Attach pool to all requests
+app.use((req, res, next) => {
+  req.pool = pool;
+  next();
+});
+
+// Register booking routes
+app.use("/api/bookings", bookingRoutes);
+
+// Healthcheck
 app.get("/api/health", async (req, res) => {
   try {
     const [rows] = await pool.query("SELECT 1 AS ok");

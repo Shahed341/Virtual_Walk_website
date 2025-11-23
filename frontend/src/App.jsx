@@ -1,7 +1,7 @@
-// src/App.jsx
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-// Import main layout sections
+// Main layout sections
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Hero from "./components/Hero/Hero.jsx";
 import MatterportTours from "./components/MatterportTours/MatterportTours.jsx";
@@ -10,33 +10,40 @@ import Services from "./components/Services/Services.jsx";
 import ServiceAreaMap from "./components/ServiceAreaMap/ServiceAreaMap.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 
+// Pages
+import Booking from "./pages/Booking.jsx";   // <-- NEW PAGE
+
 export default function App() {
   return (
-    <div className="app-root">
-      {/* Top navigation */}
-      <Navbar demoText="Demo Navbar Loaded" />
+    <BrowserRouter>
+      <div className="app-root">
+        {/* Navbar appears on all pages */}
+        <Navbar />
 
-      {/* Main scrollable content */}
-      <main>
+        <Routes>
 
-        {/* Hero / landing banner */}
-        <Hero demoText="This is the demo Hero Section" />
+          {/* Landing page */}
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <MatterportTours />
+                <WhyChooseUs />
+                <Services />
+                <ServiceAreaMap />
+              </>
+            }
+          />
 
-        {/* Matterport virtual tours section */}
-        <MatterportTours demoText="Demo Matterport Tours Section" />
+          {/* Booking page */}
+          <Route path="/booking" element={<Booking />} />
 
-        {/* Why choose us section */}
-        <WhyChooseUs demoText="Demo Why Choose Us Section" />
+        </Routes>
 
-        {/* Services & pricing */}
-        <Services demoText="Demo Services Section" />
-
-        {/* Service area / Google Map */}
-        <ServiceAreaMap demoText="Demo Map Section" />
-      </main>
-
-      {/* Footer */}
-      <Footer demoText="Demo Footer Loaded" />
-    </div>
+        {/* Footer appears on all pages */}
+        <Footer />
+      </div>
+    </BrowserRouter>
   );
 }
